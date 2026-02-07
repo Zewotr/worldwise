@@ -1,14 +1,14 @@
-import { BrowserRouter,Form,Route, Routes } from "react-router-dom";
+import { BrowserRouter,Navigate,Route, Routes } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import Homepage from "./pages/Homepage.jsx";
 import Product from "./pages/Product.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import AppLayout from "./pages/AppLayout.jsx";
 import Login from "./components/Login.jsx";
-import CityItem from "./components/CityItem.jsx"
+import City from "./components/City.jsx"
 import CityList from "./components/CityList.jsx"
-import CountryItem from "./components/CountryItem.jsx"
-// import Form from "./components/Form.jsx"
+import CountryList from "./components/CountryList.jsx";
+import Form from "./components/Form.jsx"
 
 function App() {
     const [cities, setCities] = useState([]);
@@ -38,10 +38,11 @@ function App() {
                 <Route path="/product" element={<Product />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/app" element={<AppLayout />}>
-                    <Route index element={<CityList cities={cities} isLoading={isLoading} />} />
-                    <Route path="cities" element={<CityItem cities={cities} isLoading={isLoading} />} />
-                    <Route path="country" element={<CountryItem /> } />
-                    <Route path="form" element={<Form />} />
+                    <Route index element={<Navigate replace to="cities" /> } />
+                    <Route path="cities" element={<CityList cities={cities} isLoading={isLoading} />} />
+                    <Route path="countries" element={<CountryList cities={cities} /> } />
+                    <Route path="cities/:id" element={<City />} />
+                    <Route path="form" element={<Form /> } />
                 </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<h2>Page Not Found</h2>} />
