@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents, useMapEvent} from 'react-leaflet'
 import styles from './Map.module.css'
 import { useEffect, useState } from 'react';
@@ -9,23 +9,20 @@ import useUrlPosition from '../hooks/useUrlPosition';
 
 
 export default function Map() {
-    const navigate = useNavigate();
     const {cities} = useCities();
     const [mapPosition, setMapPosition] =  useState([40, 0]);
     const {isLoading:isLoadingPosition, position: geolocationPosition, getPosition} = useGeolocation();
-    const [lat, lng] = useUrlPosition();
-    const mapLat = lat;
-    const mapLng = lng;
+    const [mapLat, mapLng] = useUrlPosition();
 
     useEffect(()=>{
-        if (mapLat, mapLng) setMapPosition([mapLat, mapLng]);
+        if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
     }, [mapLat, mapLng])
     useEffect(()=>{
         if (geolocationPosition) setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
     }, [geolocationPosition])
 
   return (
-    <div className={styles.mapContainer} onClick={()=>navigate("form")}>
+    <div className={styles.mapContainer}>
        {!geolocationPosition && <Button type='position' onClick={getPosition} >
             {isLoadingPosition ? "Loading..." : "My location"}
         </Button>}
@@ -46,8 +43,8 @@ export default function Map() {
                     </Popup>
                 </Marker>
          ))}
-            <ChangeCenter position={mapPosition} />
             <DetectClick />
+            <ChangeCenter position={mapPosition} />
         </MapContainer>
     </div>
   )
@@ -60,13 +57,9 @@ function ChangeCenter({position}){
 }
 function DetectClick() {
     const navigate = useNavigate();
-    const [, setSearchParams] = useSearchParams();
+   
     useMapEvents({
-        click: (e) => {
-            const { lat, lng } = e.latlng;
-            setSearchParams({ lat, lng }); // Update URL with new coordinates
-            navigate(`form?lat=${lat}&lng=${lng}`); // Navigate to form with updated coordinates
-        },
+        click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
     });
-    return null;
+
 }
