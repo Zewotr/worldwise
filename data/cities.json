@@ -1,40 +1,64 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
+      "id": "72f9",
+      "cityName": "Dangila",
+      "country": "Ethiopia",
+      "emoji": "🇪🇹",
+      "date": "2026-02-09T17:26:14.772Z",
+      "notes": "",
       "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
+        "lat": 11.261918529407323,
+        "lng": 36.83166503906251
+      }
     },
     {
+      "id": "ee2e",
+      "cityName": "Paris",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-02-09T19:46:50.877Z",
+      "notes": "love city",
+      "position": {
+        "lat": 48.8565834593617,
+        "lng": 2.3497009277343754
+      }
+    },
+    {
+      "id": "4687",
+      "cityName": "Delhi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2026-02-09T19:49:35.750Z",
+      "notes": "your city",
+      "position": {
+        "lat": 28.66167121641951,
+        "lng": 77.17895507812501
+      }
+    },
+    {
+      "id": "2459",
       "cityName": "Madrid",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "date": "2026-02-09T19:54:08.516Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
+        "lat": 40.396764305572056,
+        "lng": -3.7792968750000004
+      }
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "id": "7dfc",
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2026-02-09T20:15:41.200Z",
+      "notes": "",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
+        "lat": 38.71980474264239,
+        "lng": -9.146118164062502
+      }
     }
   ]
 }
