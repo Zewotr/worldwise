@@ -16,8 +16,8 @@ function App() {
    
 
   return (
+    <AuthProvider>
     <CitiesProvider>
-        <AuthProvider>
         <BrowserRouter> 
             <Routes>
                 <Route path="/" element={<Homepage />} />
@@ -41,8 +41,8 @@ function App() {
                 <Route path="*" element={<h2>Page Not Found</h2>} />
             </Routes>   
         </BrowserRouter>
-        </AuthProvider>
     </CitiesProvider>
+    </AuthProvider>
    );
 }
 
