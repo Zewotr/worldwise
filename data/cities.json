@@ -1,30 +1,6 @@
 {
   "cities": [
     {
-      "id": "72f9",
-      "cityName": "Dangila",
-      "country": "Ethiopia",
-      "emoji": "🇪🇹",
-      "date": "2026-02-09T17:26:14.772Z",
-      "notes": "",
-      "position": {
-        "lat": 11.261918529407323,
-        "lng": 36.83166503906251
-      }
-    },
-    {
-      "id": "ee2e",
-      "cityName": "Paris",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2026-02-09T19:46:50.877Z",
-      "notes": "love city",
-      "position": {
-        "lat": 48.8565834593617,
-        "lng": 2.3497009277343754
-      }
-    },
-    {
       "id": "4687",
       "cityName": "Delhi",
       "country": "India",
@@ -58,6 +34,30 @@
       "position": {
         "lat": 38.71980474264239,
         "lng": -9.146118164062502
+      }
+    },
+    {
+      "id": "dbc1",
+      "cityName": "Mora",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-11T00:50:21.815Z",
+      "notes": "dgfhgjhkj",
+      "position": {
+        "lat": 39.7240885773337,
+        "lng": -3.7133789062500004
+      }
+    },
+    {
+      "id": "a817",
+      "cityName": "Nelas",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2026-03-11T00:50:35.761Z",
+      "notes": "hgv",
+      "position": {
+        "lat": 40.463666324587685,
+        "lng": -7.910156250000001
       }
     }
   ]
