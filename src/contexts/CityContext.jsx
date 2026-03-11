@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer, useState  } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 const BASE_URL = "http://localhost:9000";
 
@@ -77,7 +77,9 @@ function CitiesProvider({ children }) {
             try {
                 // setIsLoading(true);
                 dispatch({ type: "cities/loading" });
-                const res = await fetch(`${BASE_URL}/cities/`, {
+                // the backend expects the same `/cities` route used elsewhere
+                // and the server must be running on port 9000 before this call.
+                const res = await fetch(`${BASE_URL}/cities`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
