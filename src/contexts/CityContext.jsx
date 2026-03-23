@@ -39,17 +39,17 @@ function serializeCity(city) {
 const reducer = (state, action) => {
     switch (action.type) {
         case "cities/loading":
-            return { ...state, isLoading: true };
+            return { ...state, isLoading: true, error: null };
         case "cities/loaded":
-            return { ...state, isLoading: false, cities: action.payload };
+            return { ...state, isLoading: false, cities: action.payload, error: null };
         case "city/loading":
-            return { ...state, isLoading: true };
+            return { ...state, isLoading: true, error: null };
         case "city/loaded":
-            return { ...state, isLoading: false, curentCity: action.payload };
+            return { ...state, isLoading: false, curentCity: action.payload, error: null };
         case "city/created":
-            return { ...state, isLoading: false, cities: [...state.cities, action.payload], curentCity: action.payload };
+            return { ...state, isLoading: false, cities: [...state.cities, action.payload], curentCity: action.payload, error: null };
         case "city/deleted":
-        return { ...state, isLoading: false, cities: state.cities.filter(city => city.id !== action.payload), curentCity: state.curentCity.id === action.payload ? {} : state.curentCity };
+            return { ...state, isLoading: false, cities: state.cities.filter(city => city.id !== action.payload), curentCity: state.curentCity.id === action.payload ? {} : state.curentCity, error: null };
         case "rejected":
             return { ...state, isLoading: false, error: action.payload };
         default:

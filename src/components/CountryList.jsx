@@ -1,10 +1,12 @@
 import Spinner from "./Spinner";
 import CountryItem from "./CountryItem";
+import Message from "./Message";
 import styles from './CountryList.module.css'
 import { useCities } from "../contexts/CityContext";
 export default function CountryList() {
-    const {cities, isLoading} = useCities();
+    const { cities, isLoading, error } = useCities();
     if (isLoading) return <Spinner />;
+    if (error) return <Message message={error} />;
     
     const countries = cities.reduce((arr, city)=>{if(!arr.map(el=>el.country).includes(city.country)) return [...arr, {country: city.country, emoji: city.emoji}]; else return arr},[]);
 

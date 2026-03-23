@@ -29,7 +29,7 @@ function Form() {
   const [notes, setNotes] = useState("");
   const [emoji, setEmoji] = useState("");
   const [geocodingError, setGeocodingError] = useState(null);
-  const { createCity , isLoading } = useCities();
+  const { createCity, isLoading, error } = useCities();
     const navigate = useNavigate();
 
   useEffect(() => {
@@ -112,6 +112,7 @@ function Form() {
         <Button className="btn" type='primary'>Add</Button>
         <BackButton />
       </div>
+      {error && <Message message={error} />}
     </form>
   );
 }
