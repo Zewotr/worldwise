@@ -24,3 +24,19 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.toggle {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.error {
+  margin-top: 1rem;
+  color: var(--color-danger);
+  font-size: 0.95rem;
+}
