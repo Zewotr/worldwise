@@ -1,6 +1,6 @@
 # WorldWise
 
-WorldWise is a React app for tracking and remembering cities you have visited. It provides a simple user login/registration flow, a protected app area for managing visited cities, and localStorage-based persistence for both authentication and travel data.
+  WorldWise is a React app for tracking and remembering cities you have visited. It provides a simple user login/registration flow, a protected app area for managing visited cities, and localStorage-based persistence for both authentication and travel data.
 
 ## Key Features
 
@@ -46,3 +46,6 @@ Open the app at the local Vite development URL displayed in the terminal.
 - No external backend is required; the app uses localStorage for persistence.
 - When testing in a browser, localStorage keeps users and cities between refreshes.
 - If you want to reset the app data, clear your browser site data or remove the `worldwise_users`, `worldwise_auth_user`, and `worldwise_cities` keys from localStorage.
+
+<img width="1300" height="694" alt="image" src="https://github.com/user-attachments/assets/8ef8d49a-4cb8-435f-b873-bd4746402648" />
+<img width="1300" height="694" alt="Screenshot from 2026-04-11 13-37-08" src="https://github.com/user-attachments/assets/3e5b2e42-7cda-49c4-8208-1d37ebe4f786" />
