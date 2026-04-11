@@ -6,7 +6,7 @@ function Logo() {
     <Link to="/">
       <img src="/logo.png" alt="WorldWise logo" className={styles.logo} />
     </Link>
-  )
+  );
 }
 
 export default Logo;
