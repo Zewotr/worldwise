@@ -1,24 +1,48 @@
 # WorldWise
 
-WorldWise is a React app for tracking cities you have visited.
+WorldWise is a React app for tracking and remembering cities you have visited. It provides a simple user login/registration flow, a protected app area for managing visited cities, and localStorage-based persistence for both authentication and travel data.
 
-## Database setup (Supabase)
+## Key Features
 
-The app now reads/writes cities from a Supabase PostgreSQL database, not `data/cities.json`.
+- Login and registration using localStorage
+- Protected route for the main app dashboard
+- Add, view, and delete city entries
+- City details page with travel notes and a Wikipedia link
+- Responsive navigation across homepage, product, pricing, and app sections
+- Local image assets served from the `public/` directory
 
-1. Create a Supabase project.
-2. Open the SQL editor and run `database/supabase.sql`.
-3. Copy `.env.example` to `.env` and set:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-4. Install deps and run:
+## How it works
+
+- Authentication is managed in `src/contexts/FakeAuthContext.jsx` using localStorage to save registered users and the current auth session.
+- City data is stored locally in `src/contexts/CityContext.jsx` using localStorage under `worldwise_cities`.
+- The app is built with React Router for page navigation and client-side routing.
+
+## Project structure
+
+- `public/`
+  - Static assets such as `logo.png`, `bg.jpg`, `img-1.jpg`, and `img-2.jpg`
+- `src/`
+  - `App.jsx` — application router and provider wiring
+  - `main.jsx` — app entry point
+  - `components/` — reusable UI components like `Login`, `Logo`, `User`, `Sidebar`, and city list items
+  - `contexts/` — React context providers for authentication and city data
+  - `pages/` — page-level components such as `Homepage`, `Pricing`, `Product`, and `ProtectedRoute`
+  - `hooks/` — custom hooks like geolocation and URL position parsing
+  - `lib/` — helper utilities (legacy Supabase helper may still exist but current city persistence is localStorage)
+
+## Getting started
+
+Install dependencies and start the app:
 
 ```bash
 npm install
 npm run dev
 ```
 
+Open the app at the local Vite development URL displayed in the terminal.
+
 ## Notes
 
-- The previous local JSON server script was removed.
-- `data/cities.json` can be kept only as historical/sample data.
+- No external backend is required; the app uses localStorage for persistence.
+- When testing in a browser, localStorage keeps users and cities between refreshes.
+- If you want to reset the app data, clear your browser site data or remove the `worldwise_users`, `worldwise_auth_user`, and `worldwise_cities` keys from localStorage.
